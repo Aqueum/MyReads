@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BookListings from './BookListings';
 
 const shelfNames = [
   { name: 'Currently Reading' },
@@ -16,6 +17,9 @@ class BookShelves extends Component {
           {shelfNames.map(shelfName => (
             <div className="bookshelf" key={shelfName.name}>
               <h2 className="bookshelf-title">{shelfName.name}</h2>
+              <div className="bookshelf-books">
+                <BookListings />
+              </div>
             </div>
           ))}
         </div>
