@@ -3,9 +3,7 @@ import React from 'react';
 import './App.css';
 
 class BooksApp extends React.Component {
-  state = {
-    books: []
-  };
+  state = {};
 
   render() {
     return <div className="app" />;
