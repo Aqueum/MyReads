@@ -44,7 +44,9 @@ class BookSearch extends Component {
           </div>
         </div>
         <div className="search-books-results">
-          <BookListings books={results} onChangeShelf={onChangeShelf} />
+          {query !== '' && (
+            <BookListings books={results} onChangeShelf={onChangeShelf} />
+          )}
         </div>
       </div>
     );
