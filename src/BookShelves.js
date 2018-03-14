@@ -18,10 +18,11 @@ const shelfNames = [
 ];
 class BookShelves extends Component {
   static propTypes = {
-    books: PropTypes.array.isRequired
+    books: PropTypes.array.isRequired,
+    onChangeShelf: PropTypes.func.isRequired
   };
   render() {
-    const { books } = this.props;
+    const { books, onChangeShelf } = this.props;
     return (
       <div className="list-books">
         <div className="list-books-title">
@@ -32,7 +33,11 @@ class BookShelves extends Component {
             <div className="bookshelf" key={shelfName.id}>
               <h2 className="bookshelf-title">{shelfName.name}</h2>
               <div className="bookshelf-books">
-                <BookListings books={books} shelf={shelfName.id} />
+                <BookListings
+                  books={books}
+                  shelf={shelfName.id}
+                  onChangeShelf={onChangeShelf}
+                />
               </div>
             </div>
           ))}

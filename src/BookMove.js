@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
-import * as BooksAPI from './BooksAPI';
+import PropTypes from 'prop-types';
 
 class BookMove extends Component {
-  changeShelf = something => {
-    console.log('hmm');
+  static propTypes = {
+    book: PropTypes.object.isRequired,
+    onChangeShelf: PropTypes.func.isRequired
   };
   render() {
-    const { book } = this.props;
+    const { book, onChangeShelf } = this.props;
     const shelf = book.shelf;
     return (
       <div className="book-shelf-changer">
-        <select value={shelf} onChange={event => BooksAPI.update(book, shelf)}>
+        <select
+          value={shelf}
+          onChange={event => onChangeShelf({ book }, { shelf })}
+        >
           <option value="none" disabled>
             Move to...
           </option>
