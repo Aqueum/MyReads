@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 
 class BookListings extends Component {
   render() {
+    const { books } = this.props;
     return (
       <ol className="books-grid">
-        {this.props.books.map(book => (
+        {books.map(book => (
           <li key={book.id}>
             <div className="book">
               <div className="book-top">

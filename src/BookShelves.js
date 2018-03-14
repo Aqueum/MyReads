@@ -12,6 +12,7 @@ class BookShelves extends Component {
     books: PropTypes.array.isRequired
   };
   render() {
+    const { books } = this.props;
     return (
       <div className="list-books">
         <div className="list-books-title">
@@ -22,10 +23,7 @@ class BookShelves extends Component {
             <div className="bookshelf" key={shelfName.name}>
               <h2 className="bookshelf-title">{shelfName.name}</h2>
               <div className="bookshelf-books">
-                <BookListings
-                  books={this.props.books}
-                  shelf={shelfNames.name}
-                />
+                <BookListings books={books} shelf={shelfNames.name} />
               </div>
             </div>
           ))}
