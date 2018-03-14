@@ -3,9 +3,18 @@ import PropTypes from 'prop-types';
 import BookListings from './BookListings';
 
 const shelfNames = [
-  { name: 'Currently Reading' },
-  { name: 'Want to Read' },
-  { name: 'Read' }
+  {
+    name: 'Currently Reading',
+    id: 'currentlyReading'
+  },
+  {
+    name: 'Want to Read',
+    id: 'wantToRead'
+  },
+  {
+    name: 'Read',
+    id: 'read'
+  }
 ];
 class BookShelves extends Component {
   static propTypes = {
@@ -20,10 +29,10 @@ class BookShelves extends Component {
         </div>
         <div className="list-books-content">
           {shelfNames.map(shelfName => (
-            <div className="bookshelf" key={shelfName.name}>
+            <div className="bookshelf" key={shelfName.id}>
               <h2 className="bookshelf-title">{shelfName.name}</h2>
               <div className="bookshelf-books">
-                <BookListings books={books} shelf={shelfNames.name} />
+                <BookListings books={books} shelf={shelfName.id} />
               </div>
             </div>
           ))}

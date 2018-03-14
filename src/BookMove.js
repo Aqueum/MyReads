@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import * as BooksAPI from './BooksAPI';
 
 class BookMove extends Component {
+  changeShelf = something => {
+    console.log('hmm');
+  };
   render() {
     const { book } = this.props;
     const shelf = book.shelf;
@@ -11,10 +14,10 @@ class BookMove extends Component {
           <option value="none" disabled>
             Move to...
           </option>
-          <option value="Currently Reading">Currently Reading</option>
-          <option value="Want to Read">Want to Read</option>
-          <option value="Read">Read</option>
-          <option value="None">None</option>
+          <option value="currentlyReading">Currently Reading</option>
+          <option value="wantToRead">Want to Read</option>
+          <option value="read">Read</option>
+          <option value="none">None</option>
         </select>
       </div>
     );
