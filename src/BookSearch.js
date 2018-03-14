@@ -4,7 +4,7 @@ import BookListings from './BookListings';
 
 class BookSearch extends Component {
   render() {
-    const { books, onChangeShelf, onUpdateQuery } = this.props;
+    const { books, query, onChangeShelf, onUpdateQuery } = this.props;
 
     return (
       <div className="search-books">
@@ -24,7 +24,7 @@ class BookSearch extends Component {
             <input
               type="text"
               placeholder="Search by title or author"
-              value=""
+              value={query}
               onChange={event => onUpdateQuery(event.target.value)}
             />
           </div>
