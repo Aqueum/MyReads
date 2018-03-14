@@ -19,6 +19,7 @@ class BooksApp extends Component {
   changeShelf = (book, shelf) => {
     BooksAPI.update(book, shelf).then(() => {
       BooksAPI.getAll().then(books => this.setState({ books }));
+      console.log({ book }, { shelf });
     });
   };
 
