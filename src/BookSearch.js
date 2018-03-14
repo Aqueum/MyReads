@@ -5,19 +5,20 @@ import * as BooksAPI from './BooksAPI';
 
 class BookSearch extends Component {
   state = {
-    books: [],
+    results: [{}],
     query: ''
   };
 
   updateQuery = query => {
     this.setState({ query: query.trim() });
-    BooksAPI.search(this.state.query).then(books => {
-      this.setState({ books });
+    BooksAPI.search(this.state.query).then(results => {
+      this.setState({ results });
     });
   };
 
   render() {
-    const { query, books } = this.state;
+    const { query, results } = this.state;
+    const { onChangeShelf } = this.props;
 
     return (
       <div className="search-books">
@@ -43,7 +44,7 @@ class BookSearch extends Component {
           </div>
         </div>
         <div className="search-books-results">
-          <BookListings books={books} />
+          <BookListings books={results} onChangeShelf={onChangeShelf} />
         </div>
       </div>
     );
