@@ -2,10 +2,18 @@ import React, { Component } from 'react';
 
 class BookListings extends Component {
   render() {
-    const { books } = this.props;
+    const { books, shelf } = this.props;
+
+    let showingBooks;
+    if (shelf) {
+      showingBooks = books.filter(book => book.shelf === shelf);
+    } else {
+      showingBooks = books;
+    }
+
     return (
       <ol className="books-grid">
-        {books.map(book => (
+        {showingBooks.map(book => (
           <li key={book.id}>
             <div className="book">
               <div className="book-top">
