@@ -7,7 +7,8 @@ import './App.css';
 
 class BooksApp extends Component {
   state = {
-    books: []
+    books: [],
+    query: ''
   };
 
   componentDidMount() {
@@ -20,6 +21,13 @@ class BooksApp extends Component {
     BooksAPI.update(book, shelf).then(() => {
       BooksAPI.getAll().then(books => this.setState({ books }));
       console.log({ book }, { shelf });
+    });
+  };
+
+  updateQuery = query => {
+    this.setState({ query: query });
+    BooksAPI.search(this.state.query).then(books => {
+      this.setState({ books });
     });
   };
 
@@ -37,7 +45,11 @@ class BooksApp extends Component {
         <Route
           path="/search"
           render={() => (
-            <BookSearch books={books} onChangeShelf={this.changeShelf} />
+            <BookSearch
+              books={books}
+              onChangeShelf={this.changeShelf}
+              onUpdateQuery={this.updateQuery}
+            />
           )}
         />
       </div>

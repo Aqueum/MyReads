@@ -1,24 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import BookListings from './BookListings';
-import * as BooksAPI from './BooksAPI';
 
 class BookSearch extends Component {
-  state = {
-    results: [{}],
-    query: ''
-  };
-
-  updateQuery = query => {
-    this.setState({ query: query });
-    BooksAPI.search(this.state.query).then(results => {
-      this.setState({ results });
-    });
-  };
-
   render() {
-    const { query, results } = this.state;
-    const { onChangeShelf } = this.props;
+    const { books, onChangeShelf, onUpdateQuery } = this.props;
 
     return (
       <div className="search-books">
@@ -38,15 +24,13 @@ class BookSearch extends Component {
             <input
               type="text"
               placeholder="Search by title or author"
-              value={query}
-              onChange={event => this.updateQuery(event.target.value)}
+              value=""
+              onChange={event => onUpdateQuery(event.target.value)}
             />
           </div>
         </div>
         <div className="search-books-results">
-          {query !== '' && (
-            <BookListings books={results} onChangeShelf={onChangeShelf} />
-          )}
+          <BookListings books={books} onChangeShelf={onChangeShelf} />
         </div>
       </div>
     );
