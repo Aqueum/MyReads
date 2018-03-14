@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BookMove from './BookMove';
 
 class BookListings extends Component {
   render() {
@@ -25,6 +26,7 @@ class BookListings extends Component {
                     backgroundImage: `url(${book.imageLinks.smallThumbnail})`
                   }}
                 />
+                <BookMove book={book} />
               </div>
               <div className="book-title">{book.title}</div>
               <div className="book-authors">{book.authors}</div>
