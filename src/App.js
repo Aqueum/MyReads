@@ -32,7 +32,7 @@ class BooksApp extends Component {
   };
 
   render() {
-    const { books } = this.state;
+    const { books, query } = this.state;
     return (
       <div className="app">
         <Route
