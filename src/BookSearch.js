@@ -10,7 +10,7 @@ class BookSearch extends Component {
   };
 
   updateQuery = query => {
-    this.setState({ query: query.trim() });
+    this.setState({ query: query });
     BooksAPI.search(this.state.query).then(results => {
       this.setState({ results });
     });
