@@ -47,6 +47,7 @@ class BooksApp extends Component {
           render={() => (
             <BookSearch
               books={books}
+              query={query}
               onChangeShelf={this.changeShelf}
               onUpdateQuery={this.updateQuery}
             />
