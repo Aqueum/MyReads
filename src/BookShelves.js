@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import BookListings from './BookListings';
 
 const shelfNames = [
@@ -7,6 +8,9 @@ const shelfNames = [
   { name: 'Read' }
 ];
 class BookShelves extends Component {
+  static propTypes = {
+    books: PropTypes.array.isRequired
+  };
   render() {
     return (
       <div className="list-books">
@@ -18,7 +22,10 @@ class BookShelves extends Component {
             <div className="bookshelf" key={shelfName.name}>
               <h2 className="bookshelf-title">{shelfName.name}</h2>
               <div className="bookshelf-books">
-                <BookListings />
+                <BookListings
+                  books={this.props.books}
+                  shelf={shelfNames.name}
+                />
               </div>
             </div>
           ))}

@@ -4,8 +4,22 @@ class BookListings extends Component {
   render() {
     return (
       <ol className="books-grid">
-        <li> test book </li>
-        <li> test book 2 </li>
+        {this.props.books.map(book => (
+          <li key={book.id}>
+            <div className="book">
+              <div className="book-top">
+                <div
+                  className="book-cover"
+                  style={{
+                    width: 128,
+                    height: 193,
+                    backgroundImage: `url(${book.imageLinks.smallThumbnail})`
+                  }}
+                />
+              </div>
+            </div>
+          </li>
+        ))}
       </ol>
     );
   }
