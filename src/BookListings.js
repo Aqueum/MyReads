@@ -4,7 +4,7 @@ import BookMove from './BookMove';
 
 class BookListings extends Component {
   static propTypes = {
-    books: PropTypes.array,
+    books: PropTypes.array.isRequired,
     onChangeShelf: PropTypes.func.isRequired
   };
   render() {
