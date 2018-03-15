@@ -24,16 +24,22 @@ class BooksApp extends Component {
     });
   };
 
-  mapShelves = newBooks => {
-    console.log(newBooks);
-    newBooks.map(
+  mapShelves = foundBooks => {
+    console.log(foundBooks);
+    foundBooks.map(book => {
+      book['shelf'] = false ? 'read' : 'none';
+      return book;
+    });
+    /* 
+    arr.some(arrVal => val === arrVal)
+    /*foundBooks = foundBooks.map(
       book =>
         book.id === this.state.books.id
-          ? (book.id = this.state.books.id)
-          : (book.id = 'none')
-    );
-    console.log(newBooks);
-    return newBooks;
+          ? (book.shelf = this.state.books.shelf)
+          : (book.id = 'frank')
+    );*/
+    console.log(foundBooks);
+    return foundBooks;
   };
 
   updateQuery = query => {
