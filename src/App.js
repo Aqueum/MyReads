@@ -24,12 +24,21 @@ class BooksApp extends Component {
     });
   };
 
+  mapShelves = newBooks => {
+    newBooks.map(
+      book =>
+        book.id === this.state.books.id
+          ? (book.id = this.state.books.id)
+          : (book.id = 'none')
+    );
+  };
+
   updateQuery = query => {
     this.setState({ query });
     query === ''
       ? this.setState({ foundBooks: [] })
       : BooksAPI.search(query).then(foundBooks => {
-          this.setState({ foundBooks });
+          this.setState({ foundBooks: this.mapShelves(foundBooks) });
         });
   };
 
