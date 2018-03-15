@@ -14,7 +14,7 @@ class BookMove extends Component {
           value={book.shelf}
           onChange={event => onChangeShelf(book, event.target.value)}
         >
-          <option value="none" disabled>
+          <option value="move" disabled>
             Move to...
           </option>
           <option value="currentlyReading">Currently Reading</option>
