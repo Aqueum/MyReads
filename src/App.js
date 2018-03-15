@@ -25,12 +25,15 @@ class BooksApp extends Component {
   };
 
   mapShelves = newBooks => {
+    console.log(newBooks);
     newBooks.map(
       book =>
         book.id === this.state.books.id
           ? (book.id = this.state.books.id)
           : (book.id = 'none')
     );
+    console.log(newBooks);
+    return newBooks;
   };
 
   updateQuery = query => {
