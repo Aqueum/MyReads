@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import BookListings from './BookListings';
 
 const shelfNames = [
@@ -18,10 +17,6 @@ const shelfNames = [
   }
 ];
 class BookShelves extends Component {
-  static propTypes = {
-    books: PropTypes.array.isRequired,
-    onChangeShelf: PropTypes.func.isRequired
-  };
   render() {
     const { books, onChangeShelf } = this.props;
     return (
