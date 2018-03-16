@@ -1,92 +1,88 @@
-# MyReads Project
+# MyReads
 
-This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
+* Udacity React - MyReads Project
+* [Udacity React Nanodegree](https://eu.udacity.com/course/react-nanodegree--nd019)
+* Martin Currie ([Aqueum](http://martin.aqueum.com)) - 16 March 2018
 
-Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
+# Purpose & design
 
-## TL;DR
+A book shelf single page web app using the React javascript library.
 
-To get started developing right away:
+It allows users to search for books and assign them to shelves depending on whether they:
 
-* install all project dependencies with `npm install`
-* start the development server with `npm start`
+1.  are currently reading,
+2.  want to read, or
+3.  have already read
+    the book.
 
-## What You're Getting
-```bash
-├── CONTRIBUTING.md
-├── README.md - This file.
-├── SEARCH_TERMS.md # The whitelisted short collection of available search terms for you to use with your app.
-├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
-├── public
-│   ├── favicon.ico # React Icon, You may change if you wish.
-│   └── index.html # DO NOT MODIFY
-└── src
-    ├── App.css # Styles for your app. Feel free to customize this as you desire.
-    ├── App.js # This is the root of your app. Contains static HTML right now.
-    ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
-    ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
-    ├── icons # Helpful images for your app. Use at your discretion.
-    │   ├── add.svg
-    │   ├── arrow-back.svg
-    │   └── arrow-drop-down.svg
-    ├── index.css # Global styles. You probably won't need to change anything here.
-    └── index.js # You should not need to modify this file. It is used for DOM rendering only.
-```
+# Getting Started
 
-Remember that good React design practice is to create new JS files for each component and use import/require statements to include them where they are needed.
+1.  fork, clone or download the project from [here](https://github.com/Aqueum/MyReads)
+2.  navigate to the created MyReads folder
+3.  `npm install`
+4.  `npm install --save react-router-dom`
+5.  `npm start`
+6.  then play with webpage that should open at http://localhost:3000/
 
-## Backend Server
-
-To simplify your development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
-
-* [`getAll`](#getall)
-* [`update`](#update)
-* [`search`](#search)
-
-### `getAll`
-
-Method Signature:
-
-```js
-getAll()
-```
-
-* Returns a Promise which resolves to a JSON object containing a collection of book objects.
-* This collection represents the books currently in the bookshelves in your app.
-
-### `update`
-
-Method Signature:
-
-```js
-update(book, shelf)
-```
-
-* book: `<Object>` containing at minimum an `id` attribute
-* shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]  
-* Returns a Promise which resolves to a JSON object containing the response data of the POST request
-
-### `search`
-
-Method Signature:
-
-```js
-search(query)
-```
-
-* query: `<String>`
-* Returns a Promise which resolves to a JSON object containing a collection of a maximum of 20 book objects.
-* These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
+# Known issues
 
 ## Important
+
 The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
+
+## To do
+
+Add error handling for search terms not included in the above.
+Please see App.cs @todo for the other items that I'd like to improve
+Given time contraints due to an impending paid assignment, my intention is to pass all projects before returning for extra credit.
+
+## Review suggestions
+
+### awaiting review
+
+# Files
+
+## Starter code
+
+Lots of files from [udacity starter code](https://github.com/udacity/reactnd-project-myreads-starter)
 
 ## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
-## Contributing
+## App.js
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+The main app
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+## BookListings.js
+
+see @classdesc in file for details
+
+## BookMove.js
+
+see @classdesc in file for details
+
+## BookSearch.js
+
+see @classdesc in file for details
+
+## BookShelves.js
+
+see @classdesc in file for details
+
+## Index.js
+
+the index file, to which I added a react router wrapper
+
+# Contributing
+
+This is an assessed project, so I'd probably get in trouble for accepting external input.
+
+# Code Status
+
+Can Udacity add a badge here..?
+
+# License
+
+This is an assessed project, based on the starter code referred to above, udacidy don't list their license, hence I can't either. Please assume all work is copyrighted with all rights resevred, but feel free to [contact me](http://www.aqueum.com/contact/)
+if you have any questions.
