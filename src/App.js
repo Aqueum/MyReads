@@ -27,11 +27,16 @@ class BooksApp extends Component {
   mapShelves = foundBooks => {
     foundBooks.map(book => {
       let foundShelf = 'none';
-      for (var gotBook of this.state.books) {
+      for (let i = 0; i < this.state.books.length; i++) {
+        if (this.state.books[i]['id'] === book['id']) {
+          foundShelf = this.state.books[i]['shelf'];
+        }
+      }
+      /* for (var gotBook of this.state.books) {
         if (gotBook['id'] === book['id']) {
           foundShelf = gotBook['shelf'];
         }
-      }
+      }*/
       book['shelf'] = foundShelf;
       return book;
     });
