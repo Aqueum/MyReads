@@ -97,7 +97,11 @@ class BooksApp extends Component {
     query === ''
       ? this.setState({ foundBooks: [] })
       : BooksAPI.search(query).then(foundBooks => {
-          this.setState({ foundBooks: this.mapShelves(foundBooks) });
+          if (foundBooks.length === undefined || 0) {
+            this.setState({ foundBooks: query });
+          } else {
+            this.setState({ foundBooks: this.mapShelves(foundBooks) });
+          }
         });
   };
 
