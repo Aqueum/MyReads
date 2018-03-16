@@ -39,7 +39,9 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 
 ## Review suggestions
 
-awaiting review
+### Obligatory - implemented
+
+1.  print a message in the result that `no result found` if there are `empty` result, this will give appropriate feedback to user
 
 # Files
 
