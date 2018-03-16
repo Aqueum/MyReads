@@ -21,6 +21,8 @@ import './App.css';
  * 1. Add error handling
  * (a) for search terms not included in
  * https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md
+ * (b) to overcome issue where deleting search term
+ *     too rapidly leaves some book results
  * 2. Add waiting indication, like a spinner
  * 3. Add book details when book clicked
  * 4. Add book rating capability
