@@ -20,7 +20,11 @@ class BooksApp extends Component {
 
   changeShelf = (book, shelf) => {
     BooksAPI.update(book, shelf).then(() => {
-      BooksAPI.getAll().then(books => this.setState({ books }));
+      BooksAPI.getAll()
+        .then(books => this.setState({ books }))
+        .then(foundbooks =>
+          this.setState({ foundBooks: this.mapShelves(this.state.foundBooks) })
+        );
     });
   };
 
