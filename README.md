@@ -75,6 +75,10 @@ see @classdesc in file for details
 
 the index file, to which I added a react router wrapper
 
+## Original code
+
+I originally started this work in 2017. Then, due to a paid assignment that was taking around 70 hours per week, I had to postpone and shift to a later cohort. On 12 March I was transferred to the 22 February cohort. Seeing that my deadline was 18 March, I initially leaned heavily on my [previous work](https://github.com/Aqueum/UR-MyReadS) but retyped it all - unfortunately that work was undocumented, that will teach me... Please note that a github user is allowed only one fork, hence the starer code in this case had to be detached from the original repo.
+
 # Contributing
 
 This is an assessed project, so I'd probably get in trouble for accepting external input.
