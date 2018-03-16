@@ -26,6 +26,7 @@ class BookListings extends Component {
                 <div className="book-top">
                   <div
                     className="book-cover"
+                    alt={book.title + ' book cover art'}
                     style={{
                       width: 128,
                       height: 193,
