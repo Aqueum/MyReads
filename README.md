@@ -38,7 +38,7 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 
 ## Review suggestions
 
-### awaiting review
+awaiting review
 
 # Files
 
