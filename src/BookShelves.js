@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import BookListings from './BookListings';
 
+/**
+ * @constant a set of shelf name pairs
+ * name - human readable
+ * id - machine readable
+ */
 const shelfNames = [
   {
     name: 'Currently Reading',
@@ -16,6 +21,13 @@ const shelfNames = [
     id: 'read'
   }
 ];
+
+/**
+ * @classdesc displays a set of three bookshelves containing books
+ * that the user is reading, wanting to read, or has read
+ * @param {array} books - the set of books to be displayed
+ * @param {function} onChangeShelf - function to change a book's shelf
+ */
 class BookShelves extends Component {
   render() {
     const { books, onChangeShelf } = this.props;

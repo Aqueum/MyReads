@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import BookMove from './BookMove';
 
+/**
+ * @classdesc display a graphical list of books
+ * with book cover image, title & author
+ * optionally filtered by shelf
+ * @param {array} books - the set of books to be displayed
+ * @param {string} shelf - optionaly which shelf's books
+ * are to be displayed
+ * @param {function} onChangeShelf - function to change a book's shelf
+ */
 class BookListings extends Component {
   render() {
     const { books, shelf, onChangeShelf } = this.props;
