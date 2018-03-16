@@ -86,7 +86,9 @@ class BooksApp extends Component {
 
   /**
    * @function searches for the query in the udacity server
-   * sets the foundBooks to an empty array if no query
+   * sets the foundBooks to an empty array if no query,
+   * sets the foundBooks to the query string (for later error handling)
+   * if the result's length is 0 or undefined,
    * sets the foundBooks to the result array of books otherwise
    * @param {string} query - the search string
    * note that this only workds for search terms included in

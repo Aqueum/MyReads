@@ -5,6 +5,7 @@ import BookListings from './BookListings';
 /**
  * @classdesc display a booksearch page, where books are shown
  * if they match the search term query
+ * or an error message is shown if no results are found
  * @param {array} books - the set of found books to be displayed
  * @param {string} query - the search term
  * @param {function} onChangeShelf - function to change a book's shelf
