@@ -29,9 +29,9 @@ class BooksApp extends Component {
   };
 
   mapShelves = foundBooks => {
-    var shelvedBooks = foundBooks.map(book => {
+    let shelvedBooks = foundBooks.map(book => {
       let foundShelf = 'none';
-      for (var gotBook of this.state.books) {
+      for (let gotBook of this.state.books) {
         if (gotBook['id'] === book['id']) {
           foundShelf = gotBook['shelf'];
         }
