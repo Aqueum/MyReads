@@ -32,9 +32,9 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 
 ## To do
 
-Add error handling for search terms not included in the above.
-Please see App.cs @todo for the other items that I'd like to improve
-Given time contraints due to an impending paid assignment, my intention is to pass all projects before returning for extra credit.
+1.  Add error handling for search terms not included in the above.
+2.  Please see App.cs @todo for the other items that I'd like to improve
+    Given time contraints due to an impending paid assignment, my intention is to pass all projects before returning for extra credit.
 
 ## Review suggestions
 
