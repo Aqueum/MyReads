@@ -23,7 +23,7 @@ const shelfNames = [
 ];
 
 /**
- * @classdesc displays a set of three bookshelves containing books
+ * @description displays a set of three bookshelves containing books
  * that the user is reading, wanting to read, or has read
  * @param {array} books - the set of books to be displayed
  * @param {function} onChangeShelf - function to change a book's shelf

@@ -2,7 +2,7 @@ import React from 'react';
 import BookMove from './BookMove';
 
 /**
- * @classdesc display a graphical list of books
+ * @description display a graphical list of books
  * with book cover image, title & author
  * optionally filtered by shelf
  * @param {array} books - the set of books to be displayed

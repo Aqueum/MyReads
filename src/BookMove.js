@@ -1,7 +1,7 @@
 import React from 'react';
 
 /**
- * @classdesc display a dropdown list of shelves
+ * @description display a dropdown list of shelves
  * clicking on a shelf name moves the book to that shelf
  * @param {object} book - the books that the dropdown relates to
  * @param {function} onChangeShelf - function to change a book's shelf
