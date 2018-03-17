@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import BookShelves from './BookShelves';
 import BookSearch from './BookSearch';
 import * as BooksAPI from './BooksAPI';
@@ -126,24 +126,43 @@ class BooksApp extends Component {
     const { books, foundBooks, query } = this.state;
     return (
       <div className="app">
-        <Route
-          exact
-          path="/"
-          render={() => (
-            <BookShelves books={books} onChangeShelf={this.changeShelf} />
-          )}
-        />
-        <Route
-          path="/search"
-          render={() => (
-            <BookSearch
-              books={foundBooks}
-              query={query}
-              onChangeShelf={this.changeShelf}
-              onUpdateQuery={this.updateQuery}
-            />
-          )}
-        />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <BookShelves books={books} onChangeShelf={this.changeShelf} />
+            )}
+          />
+          <Route
+            path="/search"
+            render={() => (
+              <BookSearch
+                books={foundBooks}
+                query={query}
+                onChangeShelf={this.changeShelf}
+                onUpdateQuery={this.updateQuery}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="*" // inspired by https://stackoverflow.com/a/37491381
+            render={() => (
+              <div className="list-books">
+                <div className="list-books-title">
+                  <h1> 404: Page not found </h1>
+                </div>
+                <div className="bookshelf-books">
+                  <p> come here often? </p>
+                  <a href="http://www.aqueum.com/contact/">
+                    let us know there's a problem
+                  </a>
+                </div>
+              </div>
+            )}
+          />
+        </Switch>
       </div>
     );
   }
