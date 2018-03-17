@@ -53,7 +53,7 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 
 2.  "If the component doesn't make use of state and lifecycle methods, they should be converted to stateless components. To read more about why you should do that refer to"
 
--
+* done for: BookListings
 
 # Files
 
