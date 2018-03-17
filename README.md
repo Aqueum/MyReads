@@ -51,6 +51,44 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 
 * done, but this quick fix takes more lines than the final state change, and results in a render that is quickly followed by a book shuffle... So I don't think I'm doing it the best way. I could easily sort all sets in the same way to avoid the reshuffle, but am more concerned with execution efficiency. I would love to hear your thoughts on whether there is a more efficient means of changing one member of the state array?
 
+Response: SUGGESTION
+Since you asked about how to handle changing bookshelves, here's the approach I would've taken. The approach only requires iterating over the currently shelved books 1-time so it runs in O(n) linear time:
+
+```
+getAllBooks() {
+    BooksAPI.getAll().then(books => this.setState({ books }));
+  }
+
+  handleShelfChange(shelf, book) {
+    BooksAPI.update(book, shelf).then(this.getAllBooks);
+  }
+
+  handleSearch(e) {
+    const query = e.target.value;
+    let books = [];
+
+    if (!query.length) {
+      this.getAllBooks();
+      return this.setState({ query });
+    }
+
+    BooksAPI.search(query).then(response => {
+      if (!response.error) {
+        books = response.map(result => {
+          const bookInState = this.state.books.find(
+            book => book.id === result.id
+          );
+
+          result.shelf = bookInState ? bookInState.shelf : 'none';
+          return result;
+        });
+      }
+
+      this.setState({ books, query });
+    });
+  }
+```
+
 2.  "If the component doesn't make use of `state` and lifecycle `methods`, they should be converted to stateless components. To read more about why you should do that refer to https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc"
 
 * done for: BookListings, BookShelves, BookSearch, BookMove
