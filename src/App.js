@@ -56,6 +56,17 @@ class BooksApp extends Component {
    * 4 none
    */
   changeShelf = (book, shelf) => {
+    // quickly refresh local state
+    let newBooks = [];
+    for (let vol of this.state.books) {
+      let volb = vol;
+      if (vol['id'] === book['id']) {
+        volb['shelf'] = shelf;
+      }
+      newBooks.push(volb);
+    }
+    this.setState({ books: newBooks });
+    // update database and refresh local state
     BooksAPI.update(book, shelf).then(() => {
       BooksAPI.getAll()
         .then(books => this.setState({ books }))
