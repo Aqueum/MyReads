@@ -34,7 +34,9 @@ const BookListings = ({ books, shelf, onChangeShelf }) => {
                     backgroundImage: `url(${
                       book.imageLinks !== undefined
                         ? book.imageLinks.smallThumbnail
-                        : ''
+                        : `http://via.placeholder.com/128x193/000000/ffffff?text=${encodeURIComponent(
+                            book.title
+                          )}` // concept from https://udacity-react.slack.com/archives/C5T90A6TS/p1519415232000062?thread_ts=1519409599.000218&cid=C5T90A6TS
                     })`
                   }}
                 />

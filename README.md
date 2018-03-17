@@ -55,6 +55,12 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 
 * done for: BookListings
 
+3.  "You can use placeholder image for books that don't have thumbnail in API response"
+
+* done
+
+4.
+
 # Files
 
 ## Starter code
