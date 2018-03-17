@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 /**
  * @classdesc display a dropdown list of shelves
@@ -6,26 +6,23 @@ import React, { Component } from 'react';
  * @param {object} book - the books that the dropdown relates to
  * @param {function} onChangeShelf - function to change a book's shelf
  */
-class BookMove extends Component {
-  render() {
-    const { book, onChangeShelf } = this.props;
-    return (
-      <div className="book-shelf-changer">
-        <select
-          value={book.shelf}
-          onChange={event => onChangeShelf(book, event.target.value)}
-        >
-          <option value="move" disabled>
-            Move to...
-          </option>
-          <option value="currentlyReading">Currently Reading</option>
-          <option value="wantToRead">Want to Read</option>
-          <option value="read">Read</option>
-          <option value="none">None</option>
-        </select>
-      </div>
-    );
-  }
-}
+const BookMove = ({ book, onChangeShelf }) => {
+  return (
+    <div className="book-shelf-changer">
+      <select
+        value={book.shelf}
+        onChange={event => onChangeShelf(book, event.target.value)}
+      >
+        <option value="move" disabled>
+          Move to...
+        </option>
+        <option value="currentlyReading">Currently Reading</option>
+        <option value="wantToRead">Want to Read</option>
+        <option value="read">Read</option>
+        <option value="none">None</option>
+      </select>
+    </div>
+  );
+};
 
 export default BookMove;
